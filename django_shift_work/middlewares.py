@@ -52,4 +52,5 @@ class ShiftWorkMiddleWare(BaseShiftWorkMiddleWare):
                 ret['end'] = end
                 break
 
+
         return ret
