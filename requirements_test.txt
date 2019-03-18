@@ -6,3 +6,6 @@ codecov>=2.0.0
 
 
 # Additional test requirements go here
+
+freezegun>=0.3.11
+pytz>=2018.9
