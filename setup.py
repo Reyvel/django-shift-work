@@ -47,7 +47,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 setup(
     name='django-shift-work',
     version=version,
-    description="""Middleware to check what shift is this""",
+    description="""Middleware to check what shift is currently active""",
     long_description=readme + '\n\n' + history,
     author='Reyza Velosa',
     author_email='reyza@reyvel.id',
@@ -66,11 +66,6 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
 )
