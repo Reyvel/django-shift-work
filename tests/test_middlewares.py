@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.conf import settings
+from django.utils import timezone
 from freezegun import freeze_time
 from datetime import datetime
 from unittest.mock import MagicMock
@@ -13,10 +14,10 @@ class TestDjango_shift_work(TestCase):
     def setUp(self):
         self.request = MagicMock()
         tz = settings.TIME_ZONE
-        now = datetime(2019, 4, 17, tzinfo=pytz.timezone(tz))
+        now = timezone.localtime()
 
         self.test_datetimes = (
-            now,
+            now.replace(hour=0),
             now.replace(hour=12),
             now.replace(hour=7),
             now.replace(hour=19)
@@ -29,7 +30,6 @@ class TestDjango_shift_work(TestCase):
         for dt, name in zip(self.test_datetimes, ('night', 'morning', 'morning', 'night')):
             with freeze_time(lambda: dt):
                 resp = mw(self.request)
-                print(resp.shift['name'], resp.shift['end'], name)
                 assert resp.shift['name'] == name
 
     def tearDown(self):
