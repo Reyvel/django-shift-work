@@ -11,7 +11,7 @@ Django Shift Work
 .. image:: https://codecov.io/gh/reyvel/django-shift-work/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/reyvel/django-shift-work
 
-Middleware to check what shift is this
+Middleware to check what shift is currently active
 
 Documentation
 -------------
